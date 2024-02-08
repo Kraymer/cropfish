@@ -1,1 +1,2 @@
+click
 opencv-python

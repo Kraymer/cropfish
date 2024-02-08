@@ -60,11 +60,15 @@ def crop_image(image: np.ndarray, coord1: np.ndarray, coord2: np.ndarray) -> np.
     cropped_image = image[min_y:max_y, min_x:max_x]
     return cropped_image
 
-def main() -> None:
+@click.command(
+    context_settings=dict(help_option_names=["-h", "--help"]),
+    help=__doc__,
+)
+@click.argument("image_path", type=click.Path(exists=True), nargs=1)
+def cropfish_cli(image_path) -> None:
     """
     Main function to find checkerboard corners, scale them, and crop the image.
     """
-    image_path = "test.png"
     image = cv2.imread(image_path)
     resize_factor = 0.5
     coord1, coord2 = find_corners(image, resize_factor)
@@ -75,4 +79,4 @@ def main() -> None:
         cv2.imwrite("output.png", cropped_image)
 
 if __name__ == "__main__":
-    main()
+    cropfish_cli()

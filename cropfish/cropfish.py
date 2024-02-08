@@ -77,7 +77,7 @@ def cropfish_cli(image_path) -> None:
         scaled_coord1, scaled_coord2 = scale_corners(coord1, coord2)
         print(f"Coordinates for the 8x8 checkerboard rectangle: {scaled_coord1} {scaled_coord2}")
         cropped_image = crop_image(image, scaled_coord1, scaled_coord2)
-        cv2.imwrite("output.png", cropped_image)
+        cv2.imwrite(image_path, cropped_image)
 
 if __name__ == "__main__":
     cropfish_cli()

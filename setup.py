@@ -49,5 +49,6 @@ setup(
         "Programming Language :: Python",
         "License :: OSI Approved :: MIT License",
     ],
+    entry_points={"console_scripts": ["cropfish = cropfish.cropfish:main"]},
     keywords="",
 )

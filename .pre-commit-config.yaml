@@ -1,5 +1,5 @@
 repos:
 -   repo: https://github.com/Kraymer/cropfish
-    rev: master
+    rev: v0.0.1
     hooks:
     -   id: cropfish

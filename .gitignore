@@ -1,5 +1,6 @@
 .direnv
 .envrc
+.venv
 .venv3
 __pycache__
 
